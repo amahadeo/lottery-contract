@@ -18,7 +18,7 @@ contract Lottery {
       return uint(keccak256(block.difficulty, now, players)); // global sha3 same/sim as keccak256
     }
 
-    function pickWinner() public restricted{ // including restricted takes this block of code and places it in place of _ in restricted method
+    function pickWinner() public restricted { // including restricted takes this block of code and places it in place of _ in restricted method
         uint index = random() % players.length; // create random index of winner
         players[index].transfer(this.balance); // address type comes w/ transfer method, transfer entire contract balance
         players = new address[](0); // reset players array w/ new intialized dynamic address array of 0 length/elements
