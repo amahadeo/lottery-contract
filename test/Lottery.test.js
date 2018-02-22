@@ -115,9 +115,8 @@ describe('Lottery Contract', () => {
     assert.equal(web3.utils.toWei('2', 'ether'), initialBalance);
 
     await lottery.methods.pickWinner().send({ from: accounts[0] });
-    
+
     const finalBalance = await web3.eth.getBalance(lottery.options.address);
     assert.equal(0, finalBalance);
   });
-
 });
