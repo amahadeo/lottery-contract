@@ -25,7 +25,7 @@ contract Lottery {
     }
 
     modifier restricted() { // create 'function modifier' called 'restricted' for manager validation to keep code DRY
-        require(msg.sender == manager);
+        require(msg.sender == manager); // global require used for validation
         _;
     }
 
